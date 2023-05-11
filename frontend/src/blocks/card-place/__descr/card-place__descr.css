@@ -1,0 +1,9 @@
+.card-place__descr {
+  box-sizing: border-box;
+  padding: 0px 15px 0px 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #FFFFFF;
+  border-radius: 0 0 10px 10px;
+}

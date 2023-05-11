@@ -1,0 +1,27 @@
+.header__hamburger {
+  display: none;
+}
+
+.header__hamburger:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 576px) {
+  .header__hamburger {
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    margin-right: 30px;
+    width: 24px;
+    height: 21px;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity .5s;
+
+  }
+}
+
+

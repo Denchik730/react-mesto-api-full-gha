@@ -1,0 +1,13 @@
+.info__profile-descr {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+  .info__profile-descr {
+    /* align-items: baseline; */
+    gap: 10px;
+    margin-top: 26px;
+  }
+}

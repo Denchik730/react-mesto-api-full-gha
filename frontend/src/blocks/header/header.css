@@ -1,0 +1,13 @@
+
+.header::after {
+  content: '';
+  display: block;
+  border-bottom: 1px solid rgba(84,84,84, .7);
+  margin-top: 41px;
+}
+
+@media screen and (max-width: 425px) {
+  .header::after  {
+    margin-top: 31.6px;
+  }
+}

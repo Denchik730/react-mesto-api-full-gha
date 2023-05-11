@@ -1,0 +1,35 @@
+.auth__input {
+  margin: 0 auto;
+  width: 358px;
+  padding-bottom: 13px;
+  box-sizing: border-box;
+  height: 27px;
+  border: 0;
+  border-bottom: 2px solid #CCCCCC;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #FFFFFF;
+  background-color: inherit;
+
+}
+
+.auth__input::placeholder {
+  color: #CCCCCC;
+}
+
+.auth__input:first-of-type {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 425px) {
+  .auth__input {
+    width: 100%;
+  }
+
+
+  .auth__input:first-of-type {
+    margin-top: 40px;
+  }
+
+}

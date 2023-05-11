@@ -1,0 +1,12 @@
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  min-height: 102px;
+  border-bottom: 1px solid rgba(84,84,84, .7);
+  align-items: start;
+  margin-bottom: 27px;
+}
+
+.menu-mobile_opened {
+  display: flex;
+}
