@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3001';
+export const BASE_URL = 'http://api.mestogab.nomoredomains.monster';
 
 const checkResponse = (response) => {
   if (response.ok) {
@@ -50,7 +50,6 @@ export const checkToken = (token) => {
   return request(BASE_URL, 'users/me', {
     method: 'GET',
     headers: {
-      'Accept': 'application/json',
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`,
     }
