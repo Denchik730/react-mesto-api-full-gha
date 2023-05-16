@@ -21,11 +21,6 @@ const login = (req, res, next) => {
         { expiresIn: '7d' },
       );
 
-      res.cookie('token', token, {
-        maxAge: 3600000 * 24 * 7,
-        httpOnly: true,
-      });
-
       res.send({ token });
     })
     .catch(next);

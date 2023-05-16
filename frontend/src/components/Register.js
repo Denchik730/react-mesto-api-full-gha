@@ -35,6 +35,8 @@ const Register = (props) => {
         id="password-register-input"
         name="password"
         type="password"
+        minLength="6"
+        maxLength="30"
         className="auth__input"
         placeholder="Пароль"
         value={values.password || ''}

@@ -37,6 +37,8 @@ const Login = (props) => {
         type="password"
         className="auth__input"
         placeholder="Пароль"
+        minLength="6"
+        maxLength="30"
         value={values.password || ""}
         onChange={handleChange}
       />

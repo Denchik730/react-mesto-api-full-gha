@@ -5,26 +5,23 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 const { AuthError } = require('../errors/AuthError');
 
 module.exports = (req, res, next) => {
-  const { token } = req.cookies;
+  const { authorization } = req.headers;
+  const bearer = 'Bearer ';
 
-  if (!token) {
-    next(new AuthError('Необходима авторизация'));
+  if (!authorization || !authorization.startsWith(bearer)) {
+    return next(new AuthError('Неправильные почта или пароль'));
   }
 
+  const token = authorization.replace(bearer, '');
   let payload;
 
   try {
-    // попытаемся верифицировать токен
-    payload = jwt.verify(
-      token,
-      NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
-    );
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
   } catch (err) {
-    // отправим ошибку, если не получилось
-    next(new AuthError('Необходима авторизация'));
+    return next(new AuthError('Неправильные почта или пароль'));
   }
 
   req.user = payload;
 
-  next();
+  return next();
 };

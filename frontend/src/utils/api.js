@@ -1,7 +1,6 @@
 class Api {
-  constructor({baseUrl, headers}) {
+  constructor({baseUrl}) {
     this._url = baseUrl;
-    this._headers = headers
   }
 
   _checkRes(res) {
@@ -17,20 +16,29 @@ class Api {
 
   getUserInfo() {
     return this._request(`${this._url}/users/me`, {
-      headers: this._headers
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Content-Type': 'application/json',
+      },
     });
   }
 
   getInitialCards() {
     return this._request(`${this._url}/cards`, {
-      headers: this._headers
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Content-Type': 'application/json',
+      },
     });
   }
 
   setProfileUserInfo(dataUser) {
     return this._request(`${this._url}/users/me`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         name: dataUser.name,
         about: dataUser.about
@@ -41,7 +49,10 @@ class Api {
   addNewUserCard(dataCard) {
     return this._request(`${this._url}/cards`, {
       method: 'POST',
-      headers: this._headers,
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         name: dataCard.name,
         link: dataCard.link
@@ -52,28 +63,40 @@ class Api {
   deleteCard(id) {
     return this._request(`${this._url}/cards/${id}`, {
       method: 'DELETE',
-      headers: this._headers
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Content-Type': 'application/json',
+      },
     });
   }
 
   likeCard(id) {
     return this._request(`${this._url}/cards/${id}/likes`, {
       method: 'PUT',
-      headers: this._headers
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Content-Type': 'application/json',
+      },
     });
   }
 
   dislikeCard(id) {
     return this._request(`${this._url}/cards/${id}/likes`, {
       method: 'DELETE',
-      headers: this._headers
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Content-Type': 'application/json',
+      },
     });
   }
 
   changeUserAvatar(dataAvatar) {
     return this._request(`${this._url}/users/me/avatar`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         avatar: dataAvatar.avatar
       })
@@ -86,11 +109,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-59',
-  headers: {
-    authorization: '85aaf06b-bad2-4dd5-8526-2a71ddd32563',
-    'Content-Type': 'application/json'
-  }
+  baseUrl: 'http://localhost:3001',
 });
 
 export default api;

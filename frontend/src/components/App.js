@@ -42,16 +42,18 @@ function App() {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    api
-      .getAllNeededData()
-      .then((data) => {
-        const [userData, cardData] = data;
+    if (loggedIn) {
+      api
+        .getAllNeededData()
+        .then((data) => {
+          const [userData, cardData] = data;
 
-        setCurrentUser(userData);
-        setCards(cardData);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+          setCurrentUser(userData);
+          setCards(cardData);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [loggedIn]);
 
   React.useEffect(() => {
     checkToken();
@@ -68,7 +70,7 @@ function App() {
         .checkToken(jwt)
         .then((data) => {
           if (data) {
-            setEmailUser(data.data.email);
+            setEmailUser(data.email);
             handleIsLogged();
             navigate("/", { replace: true });
           }
@@ -143,7 +145,7 @@ function App() {
   };
 
   const handleCardLike = (card) => {
-    const isLiked = card.likes.some((user) => user._id === currentUser._id);
+    const isLiked = card.likes.some((user) => user === currentUser._id);
 
     if (isLiked) {
       api
