@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.mestogab.nomoredomains.monster';
+export const BASE_URL = 'https://api.mestogab.nomoredomains.monster';
 
 const checkResponse = (response) => {
   if (response.ok) {

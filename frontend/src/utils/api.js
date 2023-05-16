@@ -109,7 +109,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://api.mestogab.nomoredomains.monster',
+  baseUrl: 'https://api.mestogab.nomoredomains.monster',
 });
 
 export default api;
