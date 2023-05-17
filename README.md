@@ -8,7 +8,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.8.40
+IP-адрес <51.250.8.40>
 
 Frontend https://mestogab.nomoredomains.monster/
 
