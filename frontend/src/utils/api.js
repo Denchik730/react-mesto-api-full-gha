@@ -17,7 +17,7 @@ class Api {
   getUserInfo() {
     return this._request(`${this._url}/users/me`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
       },
     });
@@ -26,7 +26,7 @@ class Api {
   getInitialCards() {
     return this._request(`${this._url}/cards`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
       },
     });
@@ -36,7 +36,7 @@ class Api {
     return this._request(`${this._url}/users/me`, {
       method: 'PATCH',
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -50,7 +50,7 @@ class Api {
     return this._request(`${this._url}/cards`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -64,7 +64,7 @@ class Api {
     return this._request(`${this._url}/cards/${id}`, {
       method: 'DELETE',
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
       },
     });
@@ -74,7 +74,7 @@ class Api {
     return this._request(`${this._url}/cards/${id}/likes`, {
       method: 'PUT',
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
       },
     });
@@ -84,7 +84,7 @@ class Api {
     return this._request(`${this._url}/cards/${id}/likes`, {
       method: 'DELETE',
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
       },
     });
@@ -94,7 +94,7 @@ class Api {
     return this._request(`${this._url}/users/me/avatar`, {
       method: 'PATCH',
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({

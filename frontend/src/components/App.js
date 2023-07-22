@@ -1,25 +1,25 @@
-import React from "react";
+import React from 'react';
 
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 
-import Header from "./Header";
-import Footer from "./Footer";
-import Main from "./Main";
-import EditProfilePopup from "./EditProfilePopup";
-import EditAvatarPopup from "./EditAvatarPopup";
-import AddPlacePopup from "./AddPlacePopup";
-import ApprovalPopup from "./ApprovalPopup";
-import ImagePopup from "./ImagePopup";
-import Register from "./Register";
-import Login from "./Login";
-import InfoTooltip from "./InfoTooltip";
-import ProtectedRoute from "./ProtectedRoute";
+import Header from './Header';
+import Footer from './Footer';
+import Main from './Main';
+import EditProfilePopup from './EditProfilePopup';
+import EditAvatarPopup from './EditAvatarPopup';
+import AddPlacePopup from './AddPlacePopup';
+import ApprovalPopup from './ApprovalPopup';
+import ImagePopup from './ImagePopup';
+import Register from './Register';
+import Login from './Login';
+import InfoTooltip from './InfoTooltip';
+import ProtectedRoute from './ProtectedRoute';
 
-import api from "../utils/api";
+import api from '../utils/api';
 
-import * as auth from "../utils/auth";
+import * as auth from '../utils/auth';
 
-import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
@@ -32,7 +32,7 @@ function App() {
   const [loadingPopupRequest, setLoadingPopupRequest] = React.useState(false);
   const [willDeleteCard, setWillDeleteCard] = React.useState(null);
 
-  const [emailUser, setEmailUser] = React.useState("");
+  const [emailUser, setEmailUser] = React.useState('');
   const [isInfoToolTipPopupOpen, setIsInfoToolTipPopupOpen] = React.useState(false);
   const [successRegister, setSuccessRegister] = React.useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -64,7 +64,7 @@ function App() {
   };
 
   const checkToken = () => {
-    const jwt = localStorage.getItem("token");
+    const jwt = localStorage.getItem('token');
     if (jwt) {
       auth
         .checkToken(jwt)
@@ -72,7 +72,7 @@ function App() {
           if (data) {
             setEmailUser(data.email);
             handleIsLogged();
-            navigate("/", { replace: true });
+            navigate('/', { replace: true });
           }
         })
         .catch((e) => {
@@ -91,7 +91,7 @@ function App() {
       .register(password, email)
       .then((data) => {
         setSuccessRegister(true);
-        navigate("/sign-in", { replace: true });
+        navigate('/sign-in', { replace: true });
       })
       .catch((e) => {
         if (e === 400) {
@@ -111,7 +111,7 @@ function App() {
         if (data.token) {
           handleIsLogged();
           setEmailUser(email);
-          navigate("/", { replace: true });
+          navigate('/', { replace: true });
         }
       })
       .catch((e) => {
@@ -125,10 +125,10 @@ function App() {
   };
 
   const handleSignout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem('token');
     setLoggedIn(false);
     setIsMobileMenuOpen(false);
-    navigate("/sign-in", { replace: true });
+    navigate('/sign-in', { replace: true });
   };
 
   const handleAddPlaceSubmit = (newCardData) => {

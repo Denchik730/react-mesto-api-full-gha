@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 const Popup = ({ isOpen, name, onClose, children, isWithContainer }) => {
 
@@ -7,14 +7,14 @@ const Popup = ({ isOpen, name, onClose, children, isWithContainer }) => {
     if (!isOpen) return;
 
     const closeByEscape = (e) => {
-      if (e.key === "Escape") {
+      if (e.key === 'Escape') {
         onClose();
       }
     };
 
-    document.addEventListener("keydown", closeByEscape);
+    document.addEventListener('keydown', closeByEscape);
 
-    return () => document.removeEventListener("keydown", closeByEscape);
+    return () => document.removeEventListener('keydown', closeByEscape);
 
   }, [isOpen, onClose]);
 
@@ -26,7 +26,7 @@ const Popup = ({ isOpen, name, onClose, children, isWithContainer }) => {
 
   return (
     <section
-      className={`popup ${isOpen ? "popup_opened" : ""} popup_type_${name}`}
+      className={`popup ${isOpen ? 'popup_opened' : ''} popup_type_${name}`}
       onClick={handleOverlay}
       >
       <div className={`${isWithContainer ? 'popup__container': ''} popup__container-${name}`}>

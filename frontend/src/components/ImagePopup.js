@@ -1,4 +1,4 @@
-import Popup from "./Popup";
+import Popup from './Popup';
 
 function ImagePopup({card, onClose}) {
   return (

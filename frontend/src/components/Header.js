@@ -18,11 +18,11 @@ function Header(props) {
         <div className="logo header__logo"/>
         <Routes>
           <Route path="/sign-in" element={
-            <Link to="/sign-up" className='header__link'>Регистрация</Link>
+            <Link to="/sign-up" className="header__link">Регистрация</Link>
           }/>
 
           <Route path="/sign-up" element={
-            <Link to="/sign-in" className='header__link'>Войти</Link>
+            <Link to="/sign-in" className="header__link">Войти</Link>
           }/>
 
           <Route path="/" element={(
