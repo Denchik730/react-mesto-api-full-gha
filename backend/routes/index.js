@@ -36,10 +36,6 @@ router.post(
   login,
 );
 
-router.get('/signout', auth, (req, res) => {
-  res.clearCookie('token').send({ message: 'Выход' });
-});
-
 router.use('/users', auth, routerUsers);
 router.use('/cards', auth, routerCards);
 
