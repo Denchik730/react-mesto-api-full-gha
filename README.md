@@ -7,7 +7,3 @@
 ## Ссылки на проект
 
 IP 51.250.8.40
-
-Frontend https://mestogab.nomoredomains.monster/
-
-Backend https://api.mestogab.nomoredomains.monster/
