@@ -27,7 +27,7 @@ const Popup = ({ isOpen, name, onClose, children, isWithContainer }) => {
   return (
     <section
       className={`popup ${isOpen ? 'popup_opened' : ''} popup_type_${name}`}
-      onClick={handleOverlay}
+      onMouseDown={handleOverlay}
       >
       <div className={`${isWithContainer ? 'popup__container': ''} popup__container-${name}`}>
         {children}
